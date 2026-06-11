@@ -1,0 +1,159 @@
+{
+  "converters": {
+    "titles": ["Trình chuyển đổi", "Chương trình chuyển đổi", "Trình chuyển đổi tệp", "Chuyển đổi"],
+    "features": ["Miễn phí, Trực tuyến và Không giới hạn", "Chuyển đổi trực tuyến miễn phí", "Trực tuyến và Miễn phí", "Chuyển đổi trực tuyến nhanh"]
+  },
+  "image_resizer": {
+    "titles": ["Thay đổi kích thước ảnh", "Giảm kích thước ảnh", "Thay đổi độ phân giải ảnh", "Công cụ thay đổi kích thước ảnh trực tuyến"],
+    "features": ["Không mất chất lượng", "Thay đổi kích thước ảnh hàng loạt", "Nhanh và Miễn phí", "Thay đổi kích thước không mất dữ liệu"]
+  },
+  "image_crop": {
+    "titles": ["Cắt ảnh trực tuyến", "Công cụ cắt ảnh", "Máy cắt ảnh", "Công cụ cắt ảnh trực tuyến"],
+    "features": ["Cắt dễ dàng trong trình duyệt", "Miễn phí và Không giới hạn", "Không cần tải lên"]
+  },
+  "compress_audio": {
+    "titles": ["Nén âm thanh", "Giảm kích thước MP3", "Trình nén tệp âm thanh", "Nén âm thanh trực tuyến"],
+    "features": ["Không mất chất lượng", "Giảm kích thước âm thanh trực tuyến", "Miễn phí và Nhanh"]
+  },
+  "global_privacy": ["Xử lý an toàn trong trình duyệt", "Không tải lên máy chủ", "Chuyển đổi tập trung vào quyền riêng tư"],
+  "nav": {
+    "home": "Trang chủ",
+    "video": "Video",
+    "audio": "Âm thanh",
+    "image": "Hình ảnh",
+    "pdf": "PDF",
+    "ebook": "Sách điện tử",
+    "howItWorks": "Cách hoạt động",
+    "startConverting": "Bắt đầu chuyển đổi"
+  },
+  "hero": {
+    "badge": "Định dạng - Chuyển đổi",
+    "title": "Chuyển đổi bất kỳ tệp nào",
+    "titleHighlight": "Ngay lập tức",
+    "subtitle": "Chuyển đổi video, âm thanh, hình ảnh và tài liệu trực tiếp trong trình duyệt. Không tải lên, bảo mật hoàn toàn.",
+    "uploadBtn": "Tải lên tệp",
+    "browseBtn": "Xem công cụ",
+    "filesConverted": "tệp đã chuyển đổi"
+  },
+  "categories": {
+    "imageConverter": "Trình chuyển đổi hình ảnh",
+    "imageConverterDesc": "Chuyển đổi giữa PNG, JPG, WebP, GIF, SVG và nhiều hơn",
+    "videoConverter": "Trình chuyển đổi video",
+    "videoConverterDesc": "Chuyển đổi MP4, WebM, AVI, MOV, MKV và các định dạng khác",
+    "audioConverter": "Trình chuyển đổi âm thanh",
+    "audioConverterDesc": "Chuyển đổi tệp âm thanh MP3, WAV, FLAC, AAC, OGG",
+    "pdfTools": "Công cụ PDF",
+    "pdfToolsDesc": "Chuyển đổi, ghép, tách và nén tệp PDF",
+    "imageResizer": "Công cụ thay đổi kích thước ảnh",
+    "imageResizerDesc": "Thay đổi kích thước ảnh sang bất kỳ kích thước nào trong khi giữ chất lượng",
+    "backgroundRemover": "Xóa nền",
+    "backgroundRemoverDesc": "Xóa nền từ ảnh ngay lập tức bằng AI",
+    "ebookConverter": "Trình chuyển đổi sách điện tử",
+    "ebookConverterDesc": "Chuyển đổi EPUB, MOBI, AZW3 sang PDF, TXT, HTML và nhiều hơn Trực tuyến",
+    "getStarted": "Bắt đầu"
+  },
+  "features": {
+    "private": "100% Riêng tư",
+    "privateDesc": "Tệp không bao giờ rời khỏi thiết bị của bạn. Tất cả quá trình xử lý diễn ra cục bộ trong trình duyệt.",
+    "fast": "Cực nhanh",
+    "fastDesc": "Không có độ trễ tải lên. Chuyển đổi tệp ngay lập tức với công nghệ WebAssembly.",
+    "secure": "An toàn",
+    "secureDesc": "Tệp của bạn không bao giờ được lưu trên bất kỳ máy chủ nào. Quyền riêng tư dữ liệu hoàn toàn."
+  },
+  "allInOne": "Công cụ tệp tất cả trong một",
+  "allInOneDesc": "Chọn từ bộ công cụ chuyển đổi và chỉnh sửa tệp toàn diện của chúng tôi",
+  "supportedFormats": "Các định dạng được hỗ trợ",
+  "supportedFormatsDesc": "Chúng tôi hỗ trợ {count} định dạng tệp khác nhau cho video, âm thanh, hình ảnh, vector, CAD và tài liệu",
+  "readyToConvert": "Sẵn sàng chuyển đổi?",
+  "readyToConvertDesc": "Bắt đầu chuyển đổi tệp của bạn ngay bây giờ. Không cần đăng ký, không giới hạn.",
+  "converter": {
+    "convertTo": "Chuyển đổi sang:",
+    "moreFormats": "Thêm định dạng...",
+    "converting": "Đang chuyển đổi...",
+    "conversionComplete": "Chuyển đổi hoàn tất!",
+    "cancel": "Hủy",
+    "download": "Tải xuống",
+    "selectFormat": "Chọn định dạng",
+    "dropFile": "Thả tệp .{ext} của bạn vào đây",
+    "dropSubtitle": "hoặc nhấp để tìm kiếm từ thiết bị của bạn",
+    "accepts": "Chấp nhận tệp .{ext}",
+    "fileSizeExceeds": "Kích thước tệp vượt quá giới hạn",
+    "conversionFailed": "Chuyển đổi thất bại. Vui lòng thử định dạng hoặc tệp khác.",
+    "downloadFailed": "Tải xuống tệp thất bại",
+    "noFormatSelected": "Không có định dạng đầu ra được chọn"
+  },
+  "trustSignals": {
+    "private": "100% Riêng tư",
+    "privateDesc": "Tệp không bao giờ rời khỏi thiết bị của bạn",
+    "instant": "Ngay lập tức",
+    "instantDesc": "Xử lý trong trình duyệt",
+    "noAccount": "Không cần tài khoản",
+    "noAccountDesc": "Không cần đăng ký"
+  },
+  "howItWorks": "Cách chuyển đổi {IN} sang {OUT} trực tuyến",
+  "howItWorksSingle": "Cách chuyển đổi tệp {IN}",
+  "steps": {
+    "upload": "Tải lên tệp .{ext} của bạn bằng vùng thả phía trên hoặc nhấp để tìm kiếm",
+    "selectFormat": "Chọn định dạng mục tiêu từ các tùy chọn có sẵn",
+    "converts": "Tệp của bạn tự động chuyển đổi sang định dạng .{out} hoàn toàn trong trình duyệt",
+    "download": "Tải xuống tệp đã chuyển đổi — không cần tài khoản hay email",
+    "convertsSingle": "Tệp của bạn tự động chuyển đổi sang định dạng đã chọn trong trình duyệt"
+  },
+  "faq": {
+    "title": "Câu hỏi thường gặp",
+    "q1": "Làm thế nào để chuyển đổi {IN} sang {OUT} trực tuyến miễn phí?",
+    "a1": "Tải lên tệp {inputName} của bạn bằng vùng thả. Tệp được chuyển đổi ngay lập tức sang định dạng {outputName} trong trình duyệt. Máy tính: tối đa 500 MB, Di động: tối đa 200 MB.",
+    "q2": "Việc chuyển đổi {IN} sang {OUT} trực tuyến có an toàn và riêng tư không?",
+    "a2": "Hoàn toàn. Trình chuyển đổi của chúng tôi chạy 100% trong trình duyệt, vì vậy tệp {IN} không bao giờ rời khỏi thiết bị.",
+    "q3": "Kích thước tệp tối đa cho việc chuyển đổi {IN} sang {OUT} là bao nhiêu?",
+    "a3": "Máy tính: tối đa 500 MB. Di động: tối đa 200 MB. Tất cả quá trình xử lý diễn ra cục bộ trong trình duyệt.",
+    "q1single": "Làm thế nào để chuyển đổi tệp {IN} trực tuyến?",
+    "a1single": "Tải lên tệp {inputName}, chọn định dạng mục tiêu và tệp được chuyển đổi ngay lập tức. Máy tính: tối đa 500 MB, Di động: tối đa 200 MB.",
+    "q2single": "Việc chuyển đổi tệp {IN} trực tuyến có an toàn không?",
+    "a2single": "Hoàn toàn. Trình chuyển đổi của chúng tôi chạy 100% trong trình duyệt. Tệp không bao giờ rời khỏi thiết bị.",
+    "q3single": "Kích thước tệp tối đa cho việc chuyển đổi {IN} là bao nhiêu?",
+    "a3single": "Máy tính: tối đa 500 MB. Di động: tối đa 200 MB."
+  },
+  "popularConversions": "Chuyển đổi phổ biến",
+  "allTools": "Tất cả công cụ {category}",
+  "viewAllTools": "Xem tất cả công cụ {category}",
+  "breadcrumb": {
+    "home": "Trang chủ",
+    "tools": "Công cụ {category}",
+    "converter": "Trình chuyển đổi {IN} sang {OUT}",
+    "singleConverter": "Trình chuyển đổi {IN}"
+  },
+  "footer": {
+    "description": "Chuyển đổi bất kỳ định dạng tệp nào trực tiếp trong trình duyệt. Không tải lên máy chủ, không lo lắng về quyền riêng tư.",
+    "product": "Sản phẩm",
+    "popularConversions": "Chuyển đổi phổ biến",
+    "company": "Công ty",
+    "rights": "Mọi quyền được bảo lưu.",
+    "clientSide": "Xử lý 100% phía máy khách",
+    "noServer": "Không tải lên máy chủ",
+    "videoConverter": "Trình chuyển đổi video",
+    "audioConverter": "Trình chuyển đổi âm thanh",
+    "imageConverter": "Trình chuyển đổi hình ảnh",
+    "documentConverter": "Trình chuyển đổi tài liệu",
+    "aboutUs": "Về chúng tôi",
+    "privacyPolicy": "Chính sách quyền riêng tư",
+    "termsOfService": "Điều khoản dịch vụ",
+    "contact": "Liên hệ"
+  },
+  "meta": {
+    "homeTitle": "EveryFileConvert - Trình chuyển đổi tệp trực tuyến miễn phí | Chuyển đổi Video, Âm thanh, Hình ảnh & Tài liệu",
+    "homeDesc": "Chuyển đổi bất kỳ định dạng tệp nào ngay lập tức trong trình duyệt. Máy tính: tối đa 500 MB, Di động: tối đa 200 MB. Xử lý 100% phía máy khách.",
+    "conversionTitle": "Trình chuyển đổi {IN} {OUT} | Chuyển đổi trực tuyến miễn phí - EveryFileConvert",
+    "conversionDesc1": "Trình chuyển đổi trực tuyến tốt nhất từ {IN} sang {OUT}. Máy tính: tối đa 500 MB, Di động: tối đa 200 MB. Không tải lên máy chủ, trực tiếp trong trình duyệt.",
+    "conversionDesc2": "Chuyển đổi {inputName} sang {outputName} trực tuyến trong vài giây. Máy tính: 500 MB, Di động: 200 MB. An toàn, nhanh và miễn phí.",
+    "conversionDesc3": "Cách tốt nhất để chuyển đổi {IN} sang {OUT} trực tuyến. Máy tính: 500 MB, Di động: 200 MB. Không cài đặt, không đăng ký.",
+    "singleTitle": "Trình chuyển đổi {IN} - Chuyển đổi sang nhiều định dạng trực tuyến | EveryFileConvert",
+    "singleDesc": "Trình chuyển đổi {inputName} trực tuyến tốt nhất. Máy tính: tối đa 500 MB, Di động: tối đa 200 MB. 100% riêng tư, an toàn và miễn phí.",
+    "resizerTitle": "Thay đổi kích thước ảnh trực tuyến - Miễn phí và Nhanh | EveryFileConvert",
+    "resizerDesc": "Thay đổi kích thước ảnh trực tuyến miễn phí. Máy tính: tối đa 500 MB, Di động: tối đa 200 MB. Không tải lên máy chủ.",
+    "cropTitle": "Cắt ảnh trực tuyến - Công cụ miễn phí | EveryFileConvert",
+    "cropDesc": "Cắt ảnh trực tuyến miễn phí. Máy tính: tối đa 500 MB, Di động: tối đa 200 MB.",
+    "compressAudioTitle": "Nén âm thanh trực tuyến - Công cụ giảm kích thước MP3 miễn phí | EveryFileConvert",
+    "compressAudioDesc": "Nén tệp âm thanh trực tuyến miễn phí. Máy tính: tối đa 500 MB, Di động: tối đa 200 MB. Không mất chất lượng."
+  }
+}

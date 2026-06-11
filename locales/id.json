@@ -1,0 +1,159 @@
+{
+  "converters": {
+    "titles": ["Konverter", "Program konversi", "Konverter file", "Konversi"],
+    "features": ["Gratis, Online & Tanpa Batas", "Konversi online gratis", "Online & Gratis", "Konversi online cepat"]
+  },
+  "image_resizer": {
+    "titles": ["Ubah ukuran gambar", "Pengecil ukuran gambar", "Ubah resolusi foto", "Pengubah ukuran gambar online"],
+    "features": ["Tanpa kehilangan kualitas", "Ubah ukuran gambar massal", "Cepat & Gratis", "Ubah ukuran tanpa kerugian"]
+  },
+  "image_crop": {
+    "titles": ["Potong gambar online", "Alat pemotong gambar", "Pemotong foto", "Pemotong gambar online"],
+    "features": ["Pemotongan mudah di browser", "Gratis & Tanpa Batas", "Tidak perlu upload"]
+  },
+  "compress_audio": {
+    "titles": ["Kompres audio", "Pengecil ukuran MP3", "Kompresor file audio", "Kompres audio online"],
+    "features": ["Tanpa kehilangan kualitas", "Pengecil ukuran audio online", "Gratis & Cepat"]
+  },
+  "global_privacy": ["Pemrosesan aman di browser", "Tidak ada upload ke server", "Konversi berorientasi privasi"],
+  "nav": {
+    "home": "Beranda",
+    "video": "Video",
+    "audio": "Audio",
+    "image": "Gambar",
+    "pdf": "PDF",
+    "ebook": "E-Book",
+    "howItWorks": "Cara kerjanya",
+    "startConverting": "Mulai mengonversi"
+  },
+  "hero": {
+    "badge": "Format - Konversi",
+    "title": "Konversi file apa saja",
+    "titleHighlight": "Seketika",
+    "subtitle": "Ubah video, audio, gambar, dan dokumen langsung di browser Anda. Tanpa upload, privasi penuh.",
+    "uploadBtn": "Upload file",
+    "browseBtn": "Jelajahi alat",
+    "filesConverted": "file dikonversi"
+  },
+  "categories": {
+    "imageConverter": "Konverter gambar",
+    "imageConverterDesc": "Konversi antara PNG, JPG, WebP, GIF, SVG dan lainnya",
+    "videoConverter": "Konverter video",
+    "videoConverterDesc": "Konversi MP4, WebM, AVI, MOV, MKV dan format lainnya",
+    "audioConverter": "Konverter audio",
+    "audioConverterDesc": "Konversi file audio MP3, WAV, FLAC, AAC, OGG",
+    "pdfTools": "Alat PDF",
+    "pdfToolsDesc": "Konversi, gabung, pisah, dan kompres file PDF",
+    "imageResizer": "Pengubah ukuran gambar",
+    "imageResizerDesc": "Ubah ukuran gambar ke dimensi apa pun sambil menjaga kualitas",
+    "backgroundRemover": "Penghapus latar belakang",
+    "backgroundRemoverDesc": "Hapus latar belakang dari gambar seketika dengan AI",
+    "ebookConverter": "Konverter e-book",
+    "ebookConverterDesc": "Konversi EPUB, MOBI, AZW3 ke PDF, TXT, HTML dan lainnya Online",
+    "getStarted": "Mulai"
+  },
+  "features": {
+    "private": "100% Pribadi",
+    "privateDesc": "File tidak pernah meninggalkan perangkat Anda. Semua pemrosesan terjadi secara lokal di browser.",
+    "fast": "Secepat kilat",
+    "fastDesc": "Tanpa penundaan upload. Konversi file seketika dengan teknologi WebAssembly.",
+    "secure": "Aman",
+    "secureDesc": "File Anda tidak pernah disimpan di server mana pun. Privasi data penuh."
+  },
+  "allInOne": "Alat file serba ada",
+  "allInOneDesc": "Pilih dari rangkaian alat konversi dan pengeditan file kami yang komprehensif",
+  "supportedFormats": "Format yang didukung",
+  "supportedFormatsDesc": "Kami mendukung {count} format file berbeda untuk video, audio, gambar, vektor, CAD, dan dokumen",
+  "readyToConvert": "Siap mengonversi?",
+  "readyToConvertDesc": "Mulai mengonversi file Anda sekarang. Tidak perlu registrasi, tidak ada batasan.",
+  "converter": {
+    "convertTo": "Konversi ke:",
+    "moreFormats": "Format lainnya...",
+    "converting": "Mengonversi...",
+    "conversionComplete": "Konversi selesai!",
+    "cancel": "Batal",
+    "download": "Unduh",
+    "selectFormat": "Pilih format",
+    "dropFile": "Jatuhkan file .{ext} di sini",
+    "dropSubtitle": "atau klik untuk menelusuri dari perangkat Anda",
+    "accepts": "Menerima file .{ext}",
+    "fileSizeExceeds": "Ukuran file melebihi batas",
+    "conversionFailed": "Konversi gagal. Coba format atau file yang berbeda.",
+    "downloadFailed": "Gagal mengunduh file",
+    "noFormatSelected": "Tidak ada format output yang dipilih"
+  },
+  "trustSignals": {
+    "private": "100% Pribadi",
+    "privateDesc": "File tidak pernah meninggalkan perangkat Anda",
+    "instant": "Seketika",
+    "instantDesc": "Pemrosesan di browser",
+    "noAccount": "Tanpa akun",
+    "noAccountDesc": "Tidak perlu registrasi"
+  },
+  "howItWorks": "Cara mengonversi {IN} ke {OUT} online",
+  "howItWorksSingle": "Cara mengonversi file {IN}",
+  "steps": {
+    "upload": "Upload file .{ext} menggunakan zona jatuh di atas atau klik untuk menelusuri",
+    "selectFormat": "Pilih format target dari opsi yang tersedia",
+    "converts": "File Anda secara otomatis dikonversi ke format .{out} sepenuhnya di browser",
+    "download": "Unduh file yang dikonversi — tidak perlu akun atau email",
+    "convertsSingle": "File Anda secara otomatis dikonversi ke format yang dipilih di browser"
+  },
+  "faq": {
+    "title": "Pertanyaan yang sering diajukan",
+    "q1": "Bagaimana cara mengonversi {IN} ke {OUT} secara online gratis?",
+    "a1": "Upload file {inputName} menggunakan zona jatuh. File Anda langsung dikonversi ke format {outputName} di browser. Desktop: hingga 500 MB, Mobile: hingga 200 MB.",
+    "q2": "Apakah konversi {IN} ke {OUT} online aman dan privat?",
+    "a2": "Sepenuhnya. Konverter kami berjalan 100% di browser Anda, sehingga file {IN} tidak pernah meninggalkan perangkat.",
+    "q3": "Berapa ukuran file maksimum untuk konversi {IN} ke {OUT}?",
+    "a3": "Desktop: hingga 500 MB. Mobile: hingga 200 MB. Semua pemrosesan terjadi secara lokal di browser.",
+    "q1single": "Bagaimana cara mengonversi file {IN} secara online?",
+    "a1single": "Upload file {inputName}, pilih format target dan file dikonversi seketika. Desktop: hingga 500 MB, Mobile: hingga 200 MB.",
+    "q2single": "Apakah konversi file {IN} online aman?",
+    "a2single": "Sepenuhnya. Konverter kami berjalan 100% di browser. File tidak pernah meninggalkan perangkat.",
+    "q3single": "Berapa ukuran file maksimum untuk konversi {IN}?",
+    "a3single": "Desktop: hingga 500 MB. Mobile: hingga 200 MB."
+  },
+  "popularConversions": "Konversi populer",
+  "allTools": "Semua alat {category}",
+  "viewAllTools": "Lihat semua alat {category}",
+  "breadcrumb": {
+    "home": "Beranda",
+    "tools": "Alat {category}",
+    "converter": "Konverter {IN} ke {OUT}",
+    "singleConverter": "Konverter {IN}"
+  },
+  "footer": {
+    "description": "Konversi format file apa pun langsung di browser Anda. Tanpa upload ke server, tanpa kekhawatiran privasi.",
+    "product": "Produk",
+    "popularConversions": "Konversi populer",
+    "company": "Perusahaan",
+    "rights": "Semua hak dilindungi.",
+    "clientSide": "100% pemrosesan sisi klien",
+    "noServer": "Tidak ada upload ke server",
+    "videoConverter": "Konverter video",
+    "audioConverter": "Konverter audio",
+    "imageConverter": "Konverter gambar",
+    "documentConverter": "Konverter dokumen",
+    "aboutUs": "Tentang kami",
+    "privacyPolicy": "Kebijakan privasi",
+    "termsOfService": "Syarat layanan",
+    "contact": "Kontak"
+  },
+  "meta": {
+    "homeTitle": "EveryFileConvert - Konverter file gratis online | Konversi Video, Audio, Gambar & Dokumen",
+    "homeDesc": "Konversi format file apa pun seketika di browser Anda. Desktop: hingga 500 MB, Mobile: hingga 200 MB. 100% pemrosesan sisi klien.",
+    "conversionTitle": "Konverter {IN} {OUT} | Konversi online gratis - EveryFileConvert",
+    "conversionDesc1": "Konverter {IN} ke {OUT} terbaik online. Desktop: hingga 500 MB, Mobile: hingga 200 MB. Tanpa upload server, langsung di browser.",
+    "conversionDesc2": "Konversi {inputName} ke {outputName} online dalam hitungan detik. Desktop: 500 MB, Mobile: 200 MB. Aman, cepat, dan gratis.",
+    "conversionDesc3": "Cara terbaik mengonversi {IN} ke {OUT} online. Desktop: 500 MB, Mobile: 200 MB. Tanpa instalasi, tanpa registrasi.",
+    "singleTitle": "Konverter {IN} - Konversi ke beberapa format online | EveryFileConvert",
+    "singleDesc": "Konverter {inputName} terbaik online. Desktop: hingga 500 MB, Mobile: hingga 200 MB. 100% privat, aman, dan gratis.",
+    "resizerTitle": "Ubah ukuran gambar online - Gratis & Cepat | EveryFileConvert",
+    "resizerDesc": "Ubah ukuran gambar online secara gratis. Desktop: hingga 500 MB, Mobile: hingga 200 MB. Tanpa upload ke server.",
+    "cropTitle": "Potong gambar online - Alat gratis | EveryFileConvert",
+    "cropDesc": "Potong gambar online secara gratis. Desktop: hingga 500 MB, Mobile: hingga 200 MB.",
+    "compressAudioTitle": "Kompres audio online - Pengecil MP3 gratis | EveryFileConvert",
+    "compressAudioDesc": "Kompres file audio online secara gratis. Desktop: hingga 500 MB, Mobile: hingga 200 MB. Tanpa kehilangan kualitas."
+  }
+}
