@@ -1,4 +1,3 @@
-export const dynamic = 'force-dynamic';
 import type { MetadataRoute } from "next";
 
 // ── Constants ──────────────────────────────────────────────────────────────────
