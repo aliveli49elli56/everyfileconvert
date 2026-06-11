@@ -1,3 +1,4 @@
+import Script from 'next/script';
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
@@ -14,13 +15,29 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html>
+    <html lang="tr">
       <head>
+        {/* Google AdSense */}
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
           crossOrigin="anonymous"
         />
+
+        {/* Google Analytics - Script 1 */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-8200B0JX4N"
+        />
+        {/* Google Analytics - Script 2 */}
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-8200B0JX4N');
+          `}
+        </Script>
       </head>
       <body className={inter.className}>
         {children}
