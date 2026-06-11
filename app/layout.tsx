@@ -24,16 +24,17 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
 
-        {/* Google Analytics - Script 1 */}
-       <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8200B0JX4N"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-8200B0JX4N');
-</script>
+        {/* Google Analytics - Next.js Yöntemiyle */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-8200B0JX4N"
+        />
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-8200B0JX4N');
           `}
         </Script>
       </head>
