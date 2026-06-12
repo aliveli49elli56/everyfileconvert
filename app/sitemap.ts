@@ -1,4 +1,4 @@
-import type { MetadataRoute } from "next";
+import type { MetadataRoute } from "next"; 
 import { getAllConversionSlugs } from "@/lib/config/master-registry";
 
 // ── Constants ──────────────────────────────────────────────────────────────────
