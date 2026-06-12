@@ -1,7 +1,5 @@
-import type { MetadataRoute } from "next"; 
-import { getAllConversionSlugs } from "@/lib/config/master-registry";
+import type { MetadataRoute } from "next";
 
-// ── Constants ──────────────────────────────────────────────────────────────────
 const BASE_URL = "https://www.everyfileconvert.com";
 
 const LOCALES = [
@@ -9,10 +7,9 @@ const LOCALES = [
   "ja", "zh", "ar", "hi", "nl", "pl", "id", "ko", "sv", "vi",
 ] as const;
 
-// Vercel / Netlify üzerinde build süresinin şişmemesi ve timeout yememesi için ideal bölme limiti
+// Vercel'in şişmemesi için 1000'erli alt sitemap'lere böleceğiz
 const CHUNK_SIZE = 1000;
 
-// ── Core standalone tool pages ─────────────────────────────────────────────────
 const CORE_TOOLS = [
   "/",
   "/image-converter",
@@ -30,7 +27,47 @@ const CORE_TOOLS = [
   "/terms",
 ] as const;
 
-// ── Build hreflang alternates ─────────────────────────────────────────────────
+// Tüm dönüştürme matrisin (Tekil format sayfaları dahil pSEO yapısı)
+const CONVERSIONS: Record<string, string[]> = {
+  png:  ["jpg", "jpeg", "webp", "gif", "bmp", "tiff", "ico", "svg", "pdf"],
+  jpg:  ["png", "jpeg", "webp", "gif", "bmp", "tiff", "ico", "pdf"],
+  jpeg: ["png", "jpg", "webp", "gif", "bmp", "tiff", "ico", "pdf"],
+  webp: ["png", "jpg", "jpeg", "gif", "bmp", "tiff", "pdf"],
+  gif:  ["png", "jpg", "jpeg", "webp", "bmp", "tiff", "pdf"],
+  bmp:  ["png", "jpg", "jpeg", "webp", "gif", "tiff", "ico", "pdf"],
+  tiff: ["png", "jpg", "jpeg", "webp", "gif", "bmp", "pdf"],
+  heic: ["png", "jpg", "jpeg", "webp", "tiff", "pdf"],
+  heif: ["png", "jpg", "jpeg", "webp", "tiff", "pdf"],
+  raw:  ["png", "jpg", "jpeg", "webp", "tiff", "pdf"],
+  cr2:  ["png", "jpg", "jpeg", "webp", "tiff", "pdf"],
+  svg:  ["png", "jpg", "jpeg", "webp", "bmp", "ico", "pdf"],
+  ai:   ["png", "jpg", "jpeg", "webp", "svg", "eps", "pdf"],
+  eps:  ["png", "jpg", "jpeg", "webp", "svg", "ai", "pdf"],
+  psd:  ["png", "jpg", "jpeg", "webp", "gif", "bmp", "tiff", "svg", "pdf"],
+  ico:  ["png", "jpg", "jpeg", "bmp"],
+  dwg:  ["dxf", "pdf", "svg"],
+  dxf:  ["dwg", "pdf", "svg"],
+  step: ["stl", "obj", "fbx"],
+  stl:  ["obj", "fbx", "step"],
+  obj:  ["stl", "fbx", "step"],
+  fbx:  ["obj", "stl"],
+  mp3:  ["wav", "ogg", "aac", "m4a"],
+  wav:  ["mp3", "ogg", "aac", "m4a"],
+  ogg:  ["mp3", "wav", "aac", "m4a"],
+  aac:  ["mp3", "wav", "ogg", "m4a"],
+  m4a:  ["mp3", "wav", "ogg", "aac"],
+  mp4:  ["webm", "avi", "mov", "mkv", "mp3", "wav", "ogg", "aac", "m4a"],
+  webm: ["mp4", "avi", "mov", "mkv", "mp3", "wav", "ogg", "aac"],
+  avi:  ["mp4", "webm", "mov", "mkv", "mp3", "wav"],
+  mov:  ["mp4", "webm", "avi", "mkv", "mp3", "wav", "aac"],
+  mkv:  ["mp4", "webm", "avi", "mov", "mp3", "wav", "ogg"],
+  pdf:  ["jpg", "png", "webp", "svg", "docx", "dwg", "dxf"],
+  docx: ["pdf"],
+  xlsx: ["pdf"],
+  epub: ["pdf", "mobi"],
+  mobi: ["epub", "pdf"],
+};
+
 function buildAlternates(path: string) {
   const languages: Record<string, string> = {};
   for (const locale of LOCALES) {
@@ -39,18 +76,28 @@ function buildAlternates(path: string) {
   return { languages };
 }
 
-// ── Generate all URLs (Master Registry ile %100 Senkronize pSEO) ───────────────
 function generateAllUrls(): MetadataRoute.Sitemap {
   const now = new Date();
   const allSitemapEntries: MetadataRoute.Sitemap = [];
 
-  // Sistemindeki tüm pSEO slug'larını (ikili ve tekil formatların hepsini) master-registry'den çekiyoruz
-  const dynamicSlugs = getAllConversionSlugs();
-
-  // Her bir dil için (18 dil) döngü başlatıyoruz
-  LOCALES.forEach((locale) => {
+  // Hem tekil format sayfalarını (/png) hem de ikili kombinasyonları (/png-to-jpg) çıkarıyoruz
+  const dynamicSlugs: string[] = [];
+  Object.keys(CONVERSIONS).forEach((source) => {
+    // 1. Tekil format sayfası (Örn: /png, /pdf)
+    dynamicSlugs.push(source);
     
-    // 1. O dile ait Core Sayfalar (Örn: /tr, /tr/image-converter)
+    // 2. İkili dönüşüm sayfaları (Örn: /png-to-jpg)
+    CONVERSIONS[source].forEach((target) => {
+      dynamicSlugs.push(`${source}-to-${target}`);
+    });
+  });
+
+  // Benzersiz slug'ları filtrele (Aynı formatlar çakışmasın)
+  const uniqueSlugs = Array.from(new Set(dynamicSlugs));
+
+  // 18 Dil için döngüyü kuruyoruz
+  LOCALES.forEach((locale) => {
+    // Core Sayfalar (/tr, /tr/about vs.)
     CORE_TOOLS.forEach((path) => {
       const fullPath = path === "/" ? `/${locale}` : `/${locale}${path}`;
       allSitemapEntries.push({
@@ -62,11 +109,10 @@ function generateAllUrls(): MetadataRoute.Sitemap {
       });
     });
 
-    // 2. O dile ait pSEO Sayfaları (Örn: /tr/png-to-jpg veya /tr/png)
-    dynamicSlugs.forEach((slug) => {
-      const fullPath = `/${locale}/${slug}`;
+    // pSEO Sayfaları (/tr/png, /tr/png-to-jpg vs.)
+    uniqueSlugs.forEach((slug) => {
       allSitemapEntries.push({
-        url: `${BASE_URL}${fullPath}`,
+        url: `${BASE_URL}/${locale}/${slug}`,
         lastModified: now,
         changeFrequency: "monthly" as const,
         priority: 0.7,
@@ -84,7 +130,6 @@ function getAllUrls(): MetadataRoute.Sitemap {
   return cachedUrls;
 }
 
-// ── Sitemap Pagination (Dinamik Bölme) ────────────────────────────────────────
 export async function generateSitemaps(): Promise<{ id: number }[]> {
   const totalUrls = getAllUrls().length;
   const count = Math.ceil(totalUrls / CHUNK_SIZE);
