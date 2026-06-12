@@ -8,8 +8,8 @@ const LOCALES = [
   "ja", "zh", "ar", "hi", "nl", "pl", "id", "ko", "sv", "vi",
 ] as const;
 
-// Vercel'in şişmemesi ve 404 vermemesi için limiti küçültüyoruz.
-// Bu sayede Next.js ortalama 9 adet ayrı sitemap oluşturacak.
+// Vercel'in şişmemesi ve timeout vermemesi için limiti 1000 tutuyoruz.
+// Bu sayede Next.js otomatik olarak sitemap-0.xml, sitemap-1.xml diye bölecek.
 const CHUNK_SIZE = 1000;
 
 // ── Core standalone tool pages ─────────────────────────────────────────────────
@@ -80,18 +80,12 @@ function buildAlternates(path: string) {
   return { languages };
 }
 
-// ── Generate all URLs ─────────────────────────────────────────────────────────
+// ── Generate all URLs (Diller Dahil Edilmiş Gerçek pSEO Mantığı) ────────────────
 function generateAllUrls(): MetadataRoute.Sitemap {
   const now = new Date();
+  const allSitemapEntries: MetadataRoute.Sitemap = [];
 
-  const coreUrls: MetadataRoute.Sitemap = CORE_TOOLS.map((path) => ({
-    url: `${BASE_URL}${path === "/" ? "" : path}`,
-    lastModified: now,
-    changeFrequency: "weekly" as const,
-    priority: path === "/" ? 1.0 : 0.9,
-    alternates: buildAlternates(path),
-  }));
-
+  // Önce tüm dönüşüm yollarını (pure path olarak) hazırlayalım (/png-to-jpg gibi)
   const conversionPaths: string[] = [];
   Object.keys(CONVERSIONS).forEach((source) => {
     CONVERSIONS[source].forEach((target) => {
@@ -99,15 +93,35 @@ function generateAllUrls(): MetadataRoute.Sitemap {
     });
   });
 
-  const conversionUrls: MetadataRoute.Sitemap = conversionPaths.map((path) => ({
-    url: `${BASE_URL}${path}`,
-    lastModified: now,
-    changeFrequency: "monthly" as const,
-    priority: 0.7,
-    alternates: buildAlternates(path),
-  }));
+  // Her bir dil için (18 dil) hem CORE hem de CONVERSION URL'lerini sitemape ekliyoruz
+  LOCALES.forEach((locale) => {
+    
+    // 1. O dile ait Core Sayfalar (Örn: /tr, /tr/image-converter)
+    CORE_TOOLS.forEach((path) => {
+      const fullPath = path === "/" ? `/${locale}` : `/${locale}${path}`;
+      allSitemapEntries.push({
+        url: `${BASE_URL}${fullPath}`,
+        lastModified: now,
+        changeFrequency: "weekly" as const,
+        priority: path === "/" ? 1.0 : 0.9,
+        alternates: buildAlternates(path),
+      });
+    });
 
-  return [...coreUrls, ...conversionUrls];
+    // 2. O dile ait pSEO Dönüşüm Sayfaları (Örn: /tr/png-to-jpg)
+    conversionPaths.forEach((path) => {
+      const fullPath = `/${locale}${path}`;
+      allSitemapEntries.push({
+        url: `${BASE_URL}${fullPath}`,
+        lastModified: now,
+        changeFrequency: "monthly" as const,
+        priority: 0.7,
+        alternates: buildAlternates(path),
+      });
+    });
+  });
+
+  return allSitemapEntries;
 }
 
 let cachedUrls: MetadataRoute.Sitemap | null = null;
