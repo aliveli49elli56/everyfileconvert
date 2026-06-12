@@ -7,7 +7,6 @@ const LOCALES = [
   "ja", "zh", "ar", "hi", "nl", "pl", "id", "ko", "sv", "vi",
 ] as const;
 
-// Vercel'in şişmemesi için 1000'erli alt sitemap'lere böleceğiz
 const CHUNK_SIZE = 1000;
 
 const CORE_TOOLS = [
@@ -27,7 +26,6 @@ const CORE_TOOLS = [
   "/terms",
 ] as const;
 
-// Tüm dönüştürme matrisin (Tekil format sayfaları dahil pSEO yapısı)
 const CONVERSIONS: Record<string, string[]> = {
   png:  ["jpg", "jpeg", "webp", "gif", "bmp", "tiff", "ico", "svg", "pdf"],
   jpg:  ["png", "jpeg", "webp", "gif", "bmp", "tiff", "ico", "pdf"],
@@ -68,55 +66,39 @@ const CONVERSIONS: Record<string, string[]> = {
   mobi: ["epub", "pdf"],
 };
 
-function buildAlternates(path: string) {
-  const languages: Record<string, string> = {};
-  for (const locale of LOCALES) {
-    languages[locale] = `${BASE_URL}/${locale}${path === "/" ? "" : path}`;
-  }
-  return { languages };
-}
-
 function generateAllUrls(): MetadataRoute.Sitemap {
   const now = new Date();
   const allSitemapEntries: MetadataRoute.Sitemap = [];
 
-  // Hem tekil format sayfalarını (/png) hem de ikili kombinasyonları (/png-to-jpg) çıkarıyoruz
   const dynamicSlugs: string[] = [];
   Object.keys(CONVERSIONS).forEach((source) => {
-    // 1. Tekil format sayfası (Örn: /png, /pdf)
     dynamicSlugs.push(source);
-    
-    // 2. İkili dönüşüm sayfaları (Örn: /png-to-jpg)
     CONVERSIONS[source].forEach((target) => {
       dynamicSlugs.push(`${source}-to-${target}`);
     });
   });
 
-  // Benzersiz slug'ları filtrele (Aynı formatlar çakışmasın)
   const uniqueSlugs = Array.from(new Set(dynamicSlugs));
 
-  // 18 Dil için döngüyü kuruyoruz
   LOCALES.forEach((locale) => {
-    // Core Sayfalar (/tr, /tr/about vs.)
+    // Core Sayfalar
     CORE_TOOLS.forEach((path) => {
       const fullPath = path === "/" ? `/${locale}` : `/${locale}${path}`;
       allSitemapEntries.push({
         url: `${BASE_URL}${fullPath}`,
         lastModified: now,
-        changeFrequency: "weekly" as const,
+        changeFrequency: "weekly",
         priority: path === "/" ? 1.0 : 0.9,
-        alternates: buildAlternates(path),
       });
     });
 
-    // pSEO Sayfaları (/tr/png, /tr/png-to-jpg vs.)
+    // pSEO Sayfaları
     uniqueSlugs.forEach((slug) => {
       allSitemapEntries.push({
         url: `${BASE_URL}/${locale}/${slug}`,
         lastModified: now,
-        changeFrequency: "monthly" as const,
+        changeFrequency: "monthly",
         priority: 0.7,
-        alternates: buildAlternates(`/${slug}`),
       });
     });
   });
